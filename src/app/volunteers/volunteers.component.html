@@ -14,3 +14,7 @@
         [event]="event">
     </app-volunteer>
 </div>
+
+<div *ngIf="!events.length" style="text-align: center; margin-top: 2em!important;">
+    <h1><strong>Your filters did not match any results</strong></h1>
+</div>

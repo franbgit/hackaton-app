@@ -18,6 +18,7 @@ export class LayoutComponent implements OnInit {
     {description: 'Leaderboard', url: '.'},
     {description: 'Redeem Points', url: '.'},
     {description: 'Transfer Points', url: 'transferPoints'},
+    {description: 'Feedback', url: '.'},
   ];
 
   constructor() { }
