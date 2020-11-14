@@ -20,7 +20,6 @@ export class ActivityDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log('---' + this.route.toString());
     this.route.params.subscribe((params: Params) => {
       const id = params.id;
       this.event = this.productsService.getEvent(id);

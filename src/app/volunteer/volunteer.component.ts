@@ -1,33 +1,53 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  /*OnChanges,
+  SimpleChanges,*/
+  OnInit,
+  DoCheck,
+  OnDestroy
+} from '@angular/core';
 
-import { EventsService } from '../core/services/events/events.service';
-import { Event } from '../event.model';
-
+import { Volunteer } from '../volunteer.model';
 @Component({
   selector: 'app-volunteer',
   templateUrl: './volunteer.component.html',
   styleUrls: ['./volunteer.component.scss']
 })
-export class VolunteerComponent implements OnInit {
+export class VolunteerComponent implements /*OnChanges,*/ OnInit, DoCheck, OnDestroy {
 
-  event: Event | undefined;
+  @Input() event: Volunteer | undefined;
+  @Output() eventClicked: EventEmitter<any> = new EventEmitter();
+
   today = new Date();
 
-  constructor(
-    private route: ActivatedRoute,
-    private productsService: EventsService,
-  ) { }
+  constructor() {
+      console.log('1. constructor');
+  }
+
+  // ngOnChanges(changes: SimpleChanges) {
+  //     console.log('2. ngOnChanges');
+  //     console.log(changes);
+  // }
 
   ngOnInit(): void {
-    this.route.params.subscribe((params: Params) => {
-      const id = params.id;
-      this.event = this.productsService.getEvent(id);
-    });
+      console.log('3. ngOnInit');
+  }
+
+  ngDoCheck(): void {
+      console.log('4. ngDoCheck');
+  }
+
+  ngOnDestroy(): void {
+      console.log('5. ngOnDestroy');
   }
 
   addCart(): void {
-
+      console.log('añadir al carrito');
+      this.eventClicked.emit(this.event && this.event.id);
   }
+
 
 }

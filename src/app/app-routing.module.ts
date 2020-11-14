@@ -7,7 +7,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { EventsComponent } from './events/events.component';
 import { ActivityDetailComponent } from './activity-detail/activity-detail.component';
 import { ContactComponent } from './contact/contact.component';
-import { VolunteerComponent } from './volunteer/volunteer.component';
+import { VolunteersComponent } from './volunteers/volunteers.component';
+import { VolunteerDetailComponent } from './volunteer-detail/volunteer-detail.component';
 import { TransferPointsComponent } from './transfer-points/transfer-points.component';
 
 const routes: Routes = [
@@ -38,8 +39,12 @@ const routes: Routes = [
         component: ContactComponent,
       },
       {
-        path: 'volunteer',
-        component: VolunteerComponent,
+        path: 'volunteers',
+        component: VolunteersComponent,
+      },
+      {
+        path: 'volunteers/:id',
+        component: VolunteerDetailComponent,
       },
       {
         path: 'transferPoints',

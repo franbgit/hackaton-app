@@ -14,8 +14,8 @@ export class EventsComponent implements OnInit {
   events: Event[] = [];
 
   filters = [
-    {type: 'meatty', active: false, description: 'meatty'},
-    {type: 'veggy', active: false, description: 'veggy'},
+    {type: 'traditional-maltese', active: true, description: 'Traditional Maltese'},
+    {type: 'vegetarian', active: true, description: 'Vegetarian'},
   ];
 
   constructor(

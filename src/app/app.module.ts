@@ -19,6 +19,8 @@ import { MaterialModule } from './material/material.module';
 import { ContactComponent } from './contact/contact.component';
 import { VolunteerComponent } from './volunteer/volunteer.component';
 import { TransferPointsComponent } from './transfer-points/transfer-points.component';
+import { VolunteersComponent } from './volunteers/volunteers.component';
+import { VolunteerDetailComponent } from './volunteer-detail/volunteer-detail.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { TransferPointsComponent } from './transfer-points/transfer-points.compo
     ContactComponent,
     VolunteerComponent,
     TransferPointsComponent,
+    VolunteersComponent,
+    VolunteerDetailComponent,
   ],
   imports: [
     BrowserModule,
