@@ -14,7 +14,7 @@ export class LayoutComponent implements OnInit {
     {description: 'Arts & crafts', url: '.'},
     {description: 'Volunteer', url: '.'},
     {description: 'Important info', url: '.'},
-    {description: 'Ministry Update', url: '.'},
+    {description: 'Ministry Updates', url: '.'},
     {description: 'Leaderboard', url: '.'},
     {description: 'Redeem Points', url: '.'},
     {description: 'Transfer Points', url: 'transferPoints'},
