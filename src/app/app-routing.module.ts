@@ -3,13 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LayoutComponent } from './layout/layout.component';
-// import { HomeComponent } from './home/home.component';
-import { EventsComponent } from './events/events.component';
-import { ActivityDetailComponent } from './activity-detail/activity-detail.component';
+import { PlanDetailComponent } from './plan-detail/plan-detail.component';
 import { ContactComponent } from './contact/contact.component';
-import { VolunteersComponent } from './volunteers/volunteers.component';
-import { VolunteerDetailComponent } from './volunteer-detail/volunteer-detail.component';
 import { TransferPointsComponent } from './transfer-points/transfer-points.component';
+import { PlanPagesWrapperComponent } from './plan-pages-wrapper/plan-pages-wrapper.component';
 
 const routes: Routes = [
   {
@@ -18,7 +15,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: '/activities',
+        redirectTo: '/eatingPlaces',
         pathMatch: 'full',
       },
       // {
@@ -27,24 +24,20 @@ const routes: Routes = [
       //   // loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
       // },
       {
-        path: 'activities',
-        component: EventsComponent,
+        path: 'eatingPlaces',
+        component: PlanPagesWrapperComponent,
       },
       {
-        path: 'activities/:id',
-        component: ActivityDetailComponent,
+        path: 'volunteering',
+        component: PlanPagesWrapperComponent,
+      },
+      {
+        path: 'detail/:id',
+        component: PlanDetailComponent,
       },
       {
         path: 'contact',
         component: ContactComponent,
-      },
-      {
-        path: 'volunteers',
-        component: VolunteersComponent,
-      },
-      {
-        path: 'volunteers/:id',
-        component: VolunteerDetailComponent,
       },
       {
         path: 'transferPoints',

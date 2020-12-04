@@ -1,31 +1,21 @@
 <mat-drawer-container class="example-container" hasBackdrop="true">
-    <mat-drawer #drawer mode="over">
+    <mat-drawer #drawer mode="over" [(opened)]="opened">
         <mat-nav-list>
             <div style="text-align: center">
                 <img src="assets/images/logo-red.png" style="width:auto;max-width:150px;" alt="logo">
             </div>
-            <a mat-list-item [routerLink]="nav.url" *ngFor="let nav of fillerNav">{{nav.description}}</a>
+            <div (click)="changeOpenedState()">
+                <a mat-list-item [routerLink]="nav.url" *ngFor="let nav of fillerNav">{{nav.description}}</a>
+            </div>
         </mat-nav-list>
     </mat-drawer>
     <mat-drawer-content>
-        <mat-toolbar class="header-toolbar" color="primary" style="background: #000;">
-            <mat-toolbar-row>
-                <div class="row between-xs middle-xs header-row">
-                    <button mat-icon-button (click)="drawer.toggle()"><mat-icon>menu</mat-icon></button>                    
-                    <nav>
-<!--
-                        <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
-                        <a mat-button routerLink="/activities" routerLinkActive="active">Activities</a>
-                        <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
--->
-                    </nav>
-                </div>
-            </mat-toolbar-row>
-        </mat-toolbar>
+
+        <app-header [drawer]="drawer"></app-header>
 
         <router-outlet></router-outlet>
 
         <app-footer></app-footer>
-    </mat-drawer-content>
 
+    </mat-drawer-content>
 </mat-drawer-container>

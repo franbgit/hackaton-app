@@ -1,0 +1,23 @@
+<img src="assets/images/logo.png" alt="logo" style="width: 100%;">
+
+<!-- <app-item-filters></app-item-filters> -->
+<mat-card>
+    <mat-card-content>
+        Filter by: 
+        <section class="example-section">
+            <mat-checkbox style="padding-right: 25px;" *ngFor="let filter of filters" class="example-margin" [(ngModel)]="filter.active" (click)="clickFilter('', filter.type)">{{filter.description}}</mat-checkbox>
+        </section>
+    </mat-card-content>
+</mat-card>
+
+<div class="product-grid">
+    <app-single-plan
+        *ngFor="let plan of plans"
+        (planClicked)="clickPlan($event)" 
+        [plan]="plan">
+    </app-single-plan>
+</div>
+
+<div *ngIf="!plans.length" style="text-align: center; margin-top: 2em!important;">
+    <h1><strong>Your filters did not match any results</strong></h1>
+</div>

@@ -1,0 +1,13 @@
+<mat-card class="example-card mat-elevation-z5" style="margin:2em;">
+    <mat-card-header>
+        <mat-card-title class="ellipsis">{{plan?.title | uppercase }}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="plan?.image" alt="image">
+    <mat-card-content>
+        <p>{{ plan?.location}}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="addCart()" mat-raised-button color="primary">Go to site</button>
+        <a mat-button [routerLink]="['/detail', plan?.id]">Show details</a>
+    </mat-card-actions>
+</mat-card>

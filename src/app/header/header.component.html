@@ -1,1 +1,7 @@
-
+<mat-toolbar class="header-toolbar" color="primary" style="background: #000;">
+    <mat-toolbar-row>
+        <div class="row between-xs middle-xs header-row">
+            <button mat-icon-button *ngIf="drawer !== undefined" (click)="drawer?.toggle()"><mat-icon>menu</mat-icon></button>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
